@@ -5,21 +5,28 @@ int HourlyWageCalculation(int workTime) {
 }
 
 int HourlyWageCalculationRecurrence(int workTime, int money) {
-	if (workTime <= 1) {
+	if (workTime <= 0) {
 		return 0;
 	}
-	int Salary = money * 2 - 50;
-	HourlyWageCalculationRecurrence()
+	return (money + HourlyWageCalculationRecurrence(--workTime, (money * 2) - 50));
 }
 
 int main() {
 	
-	for (int i = 0; i <= 100; i++) {
-		std::wcout << i << "ŽžŠÔ“­‚­ê‡" << std::endl;
-		std::wcout << "ŒÅ’è’l‚Ìê‡==>" << HourlyWageCalculation(i) << "‰~" << std::endl;
-
-		
+	int nowTime = 1;
+	int startMoney = 100;
+	while(true){
+		std::wcout << nowTime << "ŽžŠÔ“­‚­ê‡" << std::endl;
+		std::wcout << "ŒÅ’è’l‚Ìê‡==>" << HourlyWageCalculation(nowTime) << "‰~" << std::endl;
+		std::wcout << "Ä‹N’l‚Ìê‡==>" << HourlyWageCalculationRecurrence(nowTime, startMoney) << "‰~" << std::endl;
 		std::cout << std::endl;
+
+		if (HourlyWageCalculationRecurrence(nowTime, startMoney) > HourlyWageCalculation(nowTime)) {
+			std::wcout << nowTime << "ŽžŠÔˆÈã“­‚¢‚½‚çÄ‹A“I‚È’À‹à‚Ì‚ª–×‚©‚é" << std::endl;
+			break;
+		}
+
+		nowTime++;
 	}
 	return 0;
 }
