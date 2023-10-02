@@ -10,10 +10,9 @@ Type Min(Type t1, Type t2) {
 	}
 }
 
-template<>
-char Min<char>(char t1, char t2) {
-	std::cout << "”ŽšˆÈŠO‚Í“ü—Í‚Å‚«‚Ü‚¹‚ñ";
-	return '\0';
+void Min(char t1, char t2) {
+	std::cout << "”ŽšˆÈŠO‚Í“ü—Í‚Å‚«‚Ü‚¹‚ñ" << std::endl;
+	return;
 }
 
 int main() {
@@ -21,7 +20,7 @@ int main() {
 	std::cout << Min<int>(5, 3) << std::endl;
 	std::cout << Min<float>(5.3f, 5.1f) << std::endl;
 	std::cout << Min<double>(5.5, 4.6) << std::endl;
-	std::cout << Min<char>('a', 'b') << std::endl;
+	Min('a', 'b');
 
 	return 0;
 }
