@@ -12,7 +12,6 @@ Type Min(Type t1, Type t2) {
 
 void Min(char t1, char t2) {
 	std::wcout << "数字以外は入力できません" << std::endl;
-	return;
 }
 
 int main() {
