@@ -11,7 +11,7 @@ Type Min(Type t1, Type t2) {
 }
 
 void Min(char t1, char t2) {
-	std::cout << "”ŽšˆÈŠO‚Í“ü—Í‚Å‚«‚Ü‚¹‚ñ" << std::endl;
+	std::wcout << "æ•°å­—ä»¥å¤–ã¯å…¥åŠ›ã§ãã¾ã›ã‚“" << std::endl;
 	return;
 }
 
