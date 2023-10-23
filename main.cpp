@@ -2,21 +2,21 @@
 #include<ctime>
 #include<cstdlib>
 #include<string>
+#include<functional>
 #include<Windows.h>
 using namespace std;
 typedef void (*PFunc)(string str, int num);
 
 void Result(string str, int num);
-void SetTimeOut(PFunc pFunc, int second, string oddOrEven, int dice);
 
 int main() {
 	srand(unsigned int(time(NULL)));
 	cin.exceptions(ios::failbit);
 	PFunc pFunc;
 
-	while (true) {
-		int dice = rand() % 6 + 1;
+	int dice = rand() % 6 + 1;
 
+	std::function<string()> inputOddorEven = []() {
 		string oddOrEven;
 		while (true) {
 			try {
@@ -35,23 +35,19 @@ int main() {
 			}
 			break;
 		}
-		
-		pFunc = Result;
-		SetTimeOut(pFunc, 3, oddOrEven, dice);
+		return oddOrEven;
+		};
 
-		string proceed;
-		printf("続けますか?\n続ける場合は「続ける」または「0」やめる場合はそれ以外を\n");
-		cin >> proceed;
-		if (proceed == "続ける" || proceed == "0") {
-			printf("\n");
-			cin.clear();
-			cin.seekg(0);
-			continue;
-		}
-		else {
-			break;
-		}
-	}
+	string oddOrEven = inputOddorEven();
+		
+	std::function<void(int second)> setTimeOut = [&](int second) {
+		//コールバック処理
+		Sleep(second * 1000);
+		//正解不正解
+		pFunc(oddOrEven, dice); };
+
+	pFunc = Result;
+	setTimeOut(3);
 
 	return 0;
 }
@@ -76,11 +72,4 @@ void Result(string str, int num) {
 			printf("不正解です\n");
 		}
 	}
-}
-
-void SetTimeOut(PFunc pFunc, int second, string oddOrEven, int dice) {
-	//コールバック処理
-	Sleep(second * 1000);
-	//正解不正解
-	pFunc(oddOrEven, dice);
 }
