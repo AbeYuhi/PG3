@@ -16,13 +16,13 @@ int main() {
 	int nowTime = 1;
 	int startMoney = 100;
 	while(true){
-		std::wcout << nowTime << "ŽžŠÔ“­‚­ê‡" << std::endl;
-		std::wcout << "ŒÅ’è’l‚Ìê‡==>" << HourlyWageCalculation(nowTime) << "‰~" << std::endl;
-		std::wcout << "Ä‹N’l‚Ìê‡==>" << HourlyWageCalculationRecurrence(nowTime, startMoney) << "‰~" << std::endl;
+		std::wcout << nowTime << "æ™‚é–“åƒãå ´åˆ" << std::endl;
+		std::wcout << "å›ºå®šå€¤ã®å ´åˆ==>" << HourlyWageCalculation(nowTime) << "å††" << std::endl;
+		std::wcout << "å†èµ·å€¤ã®å ´åˆ==>" << HourlyWageCalculationRecurrence(nowTime, startMoney) << "å††" << std::endl;
 		std::cout << std::endl;
 
 		if (HourlyWageCalculationRecurrence(nowTime, startMoney) > HourlyWageCalculation(nowTime)) {
-			std::wcout << nowTime << "ŽžŠÔˆÈã“­‚¢‚½‚çÄ‹A“I‚È’À‹à‚Ì‚ª–×‚©‚é" << std::endl;
+			std::wcout << nowTime << "æ™‚é–“ä»¥ä¸Šåƒã„ãŸã‚‰å†å¸°çš„ãªè³ƒé‡‘ã®ãŒå„²ã‹ã‚‹" << std::endl;
 			break;
 		}
 
