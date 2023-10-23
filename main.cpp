@@ -20,15 +20,15 @@ int main() {
 		string oddOrEven;
 		while (true) {
 			try {
-				printf("’š(‹ô”)‚©”¼(Šï”)‚©•¶š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
+				printf("ä¸(å¶æ•°)ã‹åŠ(å¥‡æ•°)ã‹æ–‡å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\n");
 				cin >> oddOrEven;
 
-				if (oddOrEven != "’š" && oddOrEven != "‹ô”" && oddOrEven != "”¼" && oddOrEven != "Šï”") {
+				if (oddOrEven != "ä¸" && oddOrEven != "å¶æ•°" && oddOrEven != "åŠ" && oddOrEven != "å¥‡æ•°") {
 					throw - 1;
 				}
 			}
 			catch (int num) {
-				printf("ƒGƒ‰[:%d\n\n", num);
+				printf("ã‚¨ãƒ©ãƒ¼:%d\n\n", num);
 				cin.clear();
 				cin.seekg(0);
 				continue;
@@ -40,9 +40,9 @@ int main() {
 		SetTimeOut(pFunc, 3, oddOrEven, dice);
 
 		string proceed;
-		printf("‘±‚¯‚Ü‚·‚©?\n‘±‚¯‚éê‡‚Íu‘±‚¯‚év‚Ü‚½‚Íu0v‚â‚ß‚éê‡‚Í‚»‚êˆÈŠO‚ğ\n");
+		printf("ç¶šã‘ã¾ã™ã‹?\nç¶šã‘ã‚‹å ´åˆã¯ã€Œç¶šã‘ã‚‹ã€ã¾ãŸã¯ã€Œ0ã€ã‚„ã‚ã‚‹å ´åˆã¯ãã‚Œä»¥å¤–ã‚’\n");
 		cin >> proceed;
-		if (proceed == "‘±‚¯‚é" || proceed == "0") {
+		if (proceed == "ç¶šã‘ã‚‹" || proceed == "0") {
 			printf("\n");
 			cin.clear();
 			cin.seekg(0);
@@ -58,29 +58,29 @@ int main() {
 
 void Result(string str, int num) {
 	if (num % 2 == 1) {
-		printf("ƒTƒCƒRƒ‚Ìo–Ú‚Í%d‚ÅŠï”‚È‚Ì‚Å%s‚Å", num, str.c_str());
-		if (str == "”¼" || str == "Šï”") {
-			printf("³‰ğ‚Å‚·\n");
+		printf("ã‚µã‚¤ã‚³ãƒ­ã®å‡ºç›®ã¯%dã§å¥‡æ•°ãªã®ã§%sã§", num, str.c_str());
+		if (str == "åŠ" || str == "å¥‡æ•°") {
+			printf("æ­£è§£ã§ã™\n");
 		}
 		else {
-			printf("•s³‰ğ‚Å‚·\n");
+			printf("ä¸æ­£è§£ã§ã™\n");
 		}
 	}
 
 	if (num % 2 == 0) {
-		printf("ƒTƒCƒRƒ‚Ìo–Ú‚Í%d‚Å‹ô”‚È‚Ì‚Å%s‚Å", num, str.c_str());
-		if (str == "’š" || str == "‹ô”") {
-			printf("³‰ğ‚Å‚·\n");
+		printf("ã‚µã‚¤ã‚³ãƒ­ã®å‡ºç›®ã¯%dã§å¶æ•°ãªã®ã§%sã§", num, str.c_str());
+		if (str == "ä¸" || str == "å¶æ•°") {
+			printf("æ­£è§£ã§ã™\n");
 		}
 		else {
-			printf("•s³‰ğ‚Å‚·\n");
+			printf("ä¸æ­£è§£ã§ã™\n");
 		}
 	}
 }
 
 void SetTimeOut(PFunc pFunc, int second, string oddOrEven, int dice) {
-	//ƒR[ƒ‹ƒoƒbƒNˆ—
+	//ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯å‡¦ç†
 	Sleep(second * 1000);
-	//³‰ğ•s³‰ğ
+	//æ­£è§£ä¸æ­£è§£
 	pFunc(oddOrEven, dice);
 }
