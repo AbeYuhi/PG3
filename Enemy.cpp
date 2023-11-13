@@ -25,13 +25,13 @@ void Enemy::Update() {
 }
 
 void Enemy::Proximity() {
-	printf("���݂̓G�̏�Ԃ͋ߐڂł�\n");
+	printf("現在の敵の状態は近接です\n");
 }
 
 void Enemy::Shooting() {
-	printf("���݂̓G�̏�Ԃ͎ˌ��ł�\n");
+	printf("現在の敵の状態は射撃です\n");
 }
 
 void Enemy::Elimination() {
-	printf("���݂̓G�̏�Ԃ͗��E�ł�\n");
+	printf("現在の敵の状態は離脱です\n");
 }

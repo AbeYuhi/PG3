@@ -17,20 +17,20 @@ public:
 
 	void Update();
 
-private: //ƒƒ“ƒoŠÖ”
+private: //ãƒ¡ãƒ³ãƒé–¢æ•°
 	/// <summary>
-	/// ‹ßÚ
+	/// è¿‘æ¥
 	/// </summary>
 	void Proximity();
 	/// <summary>
-	/// ËŒ‚
+	/// å°„æ’ƒ
 	/// </summary>
 	void Shooting();
 	/// <summary>
-	/// —£’E
+	/// é›¢è„±
 	/// </summary>
 	void Elimination();
-private: //ƒƒ“ƒo•Ï”
+private: //ãƒ¡ãƒ³ãƒå¤‰æ•°
 	static void(Enemy::*statePatternTable[])();
 	void (Enemy::* statePattern)();
 	
