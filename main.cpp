@@ -4,13 +4,13 @@ using namespace std;
 
 int main() {
 	
-	list<const char*> yamanoteLineStation2022Year = {
+	list<const char*> yamanoteLineStation1970Year = {
 		"Toukyo",
 		"Yurakucho",
 		"Shimbashi",
 		"Hamamatsucho",
 		"Tamachi",
-		"Takanawa Gateway",
+		//"Takanawa Gateway",
 		"Shinagawa",
 		"Osaki",
 		"Gotanda",
@@ -28,7 +28,7 @@ int main() {
 		"Sugamo",
 		"Komagome",
 		"Tabata",
-		"Nishi-Nippori",
+		//"Nishi-Nippori",
 		"Nippori",
 		"Uguisudai",
 		"Ueno",
@@ -37,23 +37,21 @@ int main() {
 		"Kanda",
 	};
 
-	list<const char*> yamanoteLineStation2019Year = yamanoteLineStation2022Year;
+	list<const char*> yamanoteLineStation2019Year = yamanoteLineStation1970Year;
 	for (auto itYamanoteLineStation2019 = yamanoteLineStation2019Year.begin(); itYamanoteLineStation2019 != yamanoteLineStation2019Year.end();) {
-		if (*itYamanoteLineStation2019 == "Takanawa Gateway") {
-			itYamanoteLineStation2019 = yamanoteLineStation2019Year.erase(itYamanoteLineStation2019);
+		if (*itYamanoteLineStation2019 == "Tabata") {
+			yamanoteLineStation2019Year.insert(++itYamanoteLineStation2019, "Nishi-Nippori");
 		}
-		else {
-			itYamanoteLineStation2019++;
-		}
+
+		itYamanoteLineStation2019++;
 	}
-	list<const char*> yamanoteLineStation1970Year = yamanoteLineStation2019Year;
-	for (auto itYamanoteLineStation1970 = yamanoteLineStation1970Year.begin(); itYamanoteLineStation1970 != yamanoteLineStation1970Year.end();) {
-		if (*itYamanoteLineStation1970 == "Nishi-Nippori") {
-			itYamanoteLineStation1970 = yamanoteLineStation1970Year.erase(itYamanoteLineStation1970);
+	list<const char*> yamanoteLineStation2022Year = yamanoteLineStation2019Year;
+	for (auto itYamanoteLineStation2022 = yamanoteLineStation2022Year.begin(); itYamanoteLineStation2022 != yamanoteLineStation2022Year.end();) {
+		if (*itYamanoteLineStation2022 == "Tamachi") {
+			yamanoteLineStation2022Year.insert(++itYamanoteLineStation2022, "Takanawa Gateway");
 		}
-		else {
-			itYamanoteLineStation1970++;
-		}
+
+		itYamanoteLineStation2022++;
 	}
 
 	//1970年の山手線
